@@ -6,13 +6,22 @@ API de pedidos da Lions Tech, estruturada com **DDD (Domain-Driven Design)** em 
 
 ```text
 src/
-└── modules/
-    └── orders/
-        └── domain/
-            └── entities/
-                ├── order.ts
-                ├── order-item.ts
-                └── order.spec.ts
+├── modules/
+│   └── orders/
+│       └── domain/
+│           ├── entities/
+│           │   ├── order.ts
+│           │   ├── order-item.ts
+│           │   ├── order.spec.ts
+│           │   └── order-item.spec.ts
+│           └── value-objects/
+│               ├── money.ts
+│               └── money.spec.ts
+└── shared/
+    └── domain/
+        └── value-objects/
+            ├── email.ts
+            └── email.spec.ts
 ```
 
 A estrutura segue a organização por contexto de negócio:
@@ -38,6 +47,9 @@ A estrutura segue a organização por contexto de negócio:
 - [Exercício 1 — Mapeando a linguagem ubíqua](docs/exercicios-praticos/01-linguagem-ubiqua.md)
 - [Exercício 2 — Primeira entidade](docs/exercicios-praticos/02-primeira-entidade.md)
 - [Exercício 3 — Protegendo regras na entidade](docs/exercicios-praticos/03-protegendo-regras-na-entidade.md)
+- [Exercício 4 — Objeto de valor: Email](docs/exercicios-praticos/04-objeto-de-valor-email.md)
+- [Exercício 5 — Objeto de valor: Money](docs/exercicios-praticos/05-objeto-de-valor-money.md)
+- [Exercício 6 — Entidade com objetos de valor](docs/exercicios-praticos/06-entidade-com-objetos-de-valor.md)
 
 ## Scripts
 
@@ -54,3 +66,6 @@ npm run build
 - [x] **Exercício 1** — Glossário da linguagem ubíqua.
 - [x] **Exercício 2** — Entidade `Order` com validação de pedido sem itens.
 - [x] **Exercício 3** — Status privado, `cancel()` e `getStatus()`.
+- [x] **Exercício 4** — Objeto de valor `Email` com validação, normalização e `equals()`.
+- [x] **Exercício 5** — Objeto de valor `Money` em centavos, imutável e com `add()`, `multiply()` e `percent()`.
+- [x] **Exercício 6** — `OrderItem` com `Money` e `Order.total()`.

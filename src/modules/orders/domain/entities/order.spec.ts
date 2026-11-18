@@ -1,8 +1,9 @@
+import { Money } from '../value-objects/money';
 import { Order } from './order';
 import { OrderItem } from './order-item';
 
 function makeItem(): OrderItem {
-  return new OrderItem('product-1', 50, 2);
+  return new OrderItem('product-1', Money.fromReais(50), 2);
 }
 
 describe('Order', () => {
@@ -33,5 +34,14 @@ describe('Order', () => {
     (order as unknown as { status: string }).status = 'SHIPPED';
 
     expect(() => order.cancel()).toThrow('Pedido já enviado');
+  });
+
+  it('deve calcular o total somando os subtotais dos itens', () => {
+    const order = new Order('order-1', 'customer-1', [
+      new OrderItem('product-1', Money.fromReais(50), 2),
+      new OrderItem('product-2', Money.fromReais(30), 1),
+    ]);
+
+    expect(order.total().value).toBe(130);
   });
 });

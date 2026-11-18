@@ -1,3 +1,4 @@
+import { Money } from '../value-objects/money';
 import { OrderItem } from './order-item';
 
 export type OrderStatus = 'PENDING' | 'PAID' | 'SHIPPED' | 'CANCELED';
@@ -25,6 +26,13 @@ export class Order {
 
   getStatus(): OrderStatus {
     return this.status;
+  }
+
+  total(): Money {
+    return this.items.reduce(
+      (sum, item) => sum.add(item.subtotal()),
+      Money.zero(),
+    );
   }
 
   getItems(): readonly OrderItem[] {
