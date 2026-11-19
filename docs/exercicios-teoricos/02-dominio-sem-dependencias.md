@@ -6,4 +6,4 @@ Por que a camada de domínio não deve depender de bibliotecas como o Express ou
 
 ## Resposta
 
-Porque a camada de domínio deve cuidar somente das **regras de negócio**. Se ela depender dessas bibliotecas, ficará presa a tecnologias específicas. Separando essas responsabilidades, podemos trocar o banco de dados ou o framework sem precisar alterar as regras do sistema.
+Porque a camada de domínio deve cuidar somente das regras de negócio. Se ela depender dessas bibliotecas, ficará presa a tecnologias específicas. Separando essas responsabilidades, podemos trocar o banco de dados ou o framework sem precisar alterar as regras do sistema.

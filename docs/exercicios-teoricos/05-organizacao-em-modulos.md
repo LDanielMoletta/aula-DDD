@@ -6,7 +6,7 @@ Qual das práticas abaixo está correta sobre a organização de projetos com DD
 
 ## Resposta
 
-Existem **duas alternativas corretas** na questão:
+Existem duas alternativas corretas na questão:
 
-- **b)** Organizar o projeto em módulos por contexto de negócio facilita a manutenção e a expansão.
-- **d)** A camada de domínio deve conter apenas regras de negócio, sem detalhes de infraestrutura.
+- b) Organizar o projeto em módulos por contexto de negócio facilita a manutenção e a expansão.
+- d) A camada de domínio deve conter apenas regras de negócio, sem detalhes de infraestrutura.
