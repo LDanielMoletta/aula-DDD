@@ -23,6 +23,12 @@ export const env = {
   get mongoDb(): string {
     return process.env.MONGODB_DB ?? 'lionsshop';
   },
+  get dnsServers(): string[] {
+    return (process.env.DNS_SERVERS ?? '')
+      .split(',')
+      .map((server) => server.trim())
+      .filter((server) => server.length > 0);
+  },
   get port(): number {
     return Number(process.env.PORT ?? 3000);
   },

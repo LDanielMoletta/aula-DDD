@@ -1,5 +1,8 @@
+import { configureDns } from './shared/infra/config/dns';
 import { env } from './shared/infra/config/env';
 import { MongoConnection } from './shared/infra/database/mongo-connection';
+
+configureDns();
 
 async function bootstrap(): Promise<void> {
   const connection = new MongoConnection(env.mongoUri, env.mongoDb);

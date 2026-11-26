@@ -1,5 +1,8 @@
+import { configureDns } from '../config/dns';
 import { env } from '../config/env';
 import { MongoConnection } from './mongo-connection';
+
+configureDns();
 
 async function main(): Promise<void> {
   const connection = new MongoConnection(env.mongoUri, env.mongoDb);
